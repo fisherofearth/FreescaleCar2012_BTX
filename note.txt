@@ -1,0 +1,88 @@
+ver:2.0.3 
+note:add LPTMR-PluseCounter
+
+ver:2.0.4 
+note:修改KEYBOARD为中断控制
+
+ver:2.0.5
+note:
+菜单功能
+图像处理——导向信息
+
+ver:2.1.0
+note:
+修正device initialization 不能正常创建MCUinit.c文件的问题
+
+ver:2.2.4
+note:
+此版悲剧了
+
+ver:2.2.7
+note:
+此版也悲剧了
+
+ver:2.3.0
+note:
+新增SPI操作microSD card 的模块
+（有时间一定要改进读写速度）
+
+ver:2.3.1
+note:
+部分参数存储在SD卡
+开机需要确认SD卡
+图像横向修正
+导向信息改为结构体
+
+ver:2.3.1
+note:
+I2C通信
+
+ver:2.3.3
+note:
+图像处理横向修正改为纵向修正
+
+ver:2.3.4
+note:
+加入梯度方向，以此串行搜索边沿，领域梯度检测
+增加FIFO clock间隔时间，修正图像抖动问题
+
+ver:4.1.3 
+修正了两点求直线的的bug（原来右向线计算有问题，z没取绝对值）
+
+
+命名习惯
+借鉴C#3.0
+
+-----变量或参数命名-----
+Camel规则exp:int flagDisplay
+前缀顺序flg->interface
+[设备名称] + [前缀] + [描述] 
+前缀列表:
+F_ flag 标志位 uchar型
+Pt_ point 指针  uint or int 型
+Pr_ parameter
+Pn_ pin 引脚
+I_ interface 接口 
+D_ data 数据
+A_ attribute 属性
+S_ state  状态
+T_ timer 计时器
+C_ counter 计数器
+
+
+
+-----方法（函数）和类（结构体）的命名-----
+Pascal规则exp:void InitDevice()
+[设备名称前缀] + [动词] + [宾语]
+exp：InitDevice_Keyboard
+exp: DisplayWord_LM9033
+
+-----文件命名：-----
+所有文件名小写
+
+-----其他命名-----
+命名函数。exp:void InitDevice()
+用来命名局部变量。exp:int flagDisplay
+接口的名称加前缀“I”（Interface）。 exp:#define Ikeyboard PORTA_PDIR
+for循环变量中一般用i,   j,   k,   l,   m,   n。 
+
